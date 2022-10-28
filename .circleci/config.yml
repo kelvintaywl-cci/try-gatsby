@@ -3,7 +3,11 @@ version: 2.1
 jobs:
   deploy:
     docker:
-      - image: circleci/node:12.13.0-browsers
+      # Node 12 is End-of-Life (EoL) so is no longer compatible with Gatsby:
+      # See https://github.com/nodejs/Release#release-schedule
+      # Also see: https://www.gatsbyjs.com/docs/upgrading-node-js/#gatsbys-nodejs-support-policy
+      # - image: circleci/node:12.13.0-browsers
+      - image: circleci/node:14.18.2-browsers
     resource_class: medium+
     steps:
       - checkout
