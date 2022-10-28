@@ -11,8 +11,8 @@ jobs:
     resource_class: medium+
     steps:
       - checkout
-      - run: npm install gatsby-cli
-      - run: npx gatsby --version
+      - run: sudo npm install -g gatsby-cli
+      - run: gatsby --version
 
 workflows:
   deploy:
