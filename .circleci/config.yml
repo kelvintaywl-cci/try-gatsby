@@ -1,0 +1,16 @@
+version: 2.1
+
+jobs:
+  deploy:
+    docker:
+      - image: circleci/node:12.13.0-browsers
+    resource_class: medium+
+    steps:
+      - checkout
+      - run: npm install gatsby-cli
+      - run: npx gatsby --version
+
+workflows:
+  deploy:
+    jobs:
+      - deploy
