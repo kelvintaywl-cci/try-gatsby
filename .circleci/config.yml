@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: image: cimg/openjdk:11.0-browsers
+      - image: cimg/openjdk:11.0-browsers
     resource_class: medium
     steps:
       - run: |
